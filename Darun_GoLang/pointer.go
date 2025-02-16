@@ -6,9 +6,7 @@ func main() {
     fmt.Print("Enter a number: ")
     fmt.Scan(&num)
 
-    if num%2 == 0 {
-        fmt.Println(num, "is Even")
-    } else {
-        fmt.Println(num, "is Odd")
-    }
+    var ptr *int = &num
+
+    fmt.Println("You entered:",*ptr)
 }

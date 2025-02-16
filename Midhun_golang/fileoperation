@@ -1,0 +1,25 @@
+package main
+
+import (
+	"fmt"
+	"io/ioutil"
+	"os"
+)
+
+func main() {
+	inputFile := "input.txt"
+	content, err := ioutil.ReadFile(inputFile)
+	if err != nil {
+		fmt.Println("Error reading file:", err)
+		return
+	}
+	fmt.Println("File content:", string(content))
+
+	outputFile := "output.txt"
+	err = ioutil.WriteFile(outputFile, []byte("Processed: "+string(content)), 0644)
+	if err != nil {
+		fmt.Println("Error writing file:", err)
+		return
+	}
+	fmt.Println("Processed content written to", outputFile)
+}
